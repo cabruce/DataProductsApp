@@ -1,0 +1,49 @@
+Prediction of the World Population by Age and Gender using Shiny
+========================================================
+author: cabruce
+date: 12/22/15 
+
+
+
+How is the population predicted?
+========================================================
+
+- The United Nations World Population Prospects estimates the population of each country up to 85 years into the future. 
+
+- Using a combination of fertility estimates and mortality estimates, the population of both sexes is estimated. 
+ 
+- One method of displaying this information is a population pyramid, a graphical illustration that shows the age distribution of a population for both genders. 
+
+- Population pyramids can be used to observe the increases and decreases of birth and death rates over time.
+
+
+Example
+========================================================
+
+```{r, echo=FALSE}
+library(plotrix)
+xx.2015<-c(3.0, 3.1, 3.1, 3.1, 3.5, 3.3, 3.4, 3.0, 3.2, 3.2, 3.6, 3.5, 3.0, 2.6, 1.9, 1.4, 1.1, 0.8, 0.4, 0.1, 0.0)
+xy.2015<-c(3.1, 3.3, 3.3, 3.3, 3.7, 3.5, 3.5, 3.1, 3.2, 3.2, 3.5, 3.4, 2.8, 2.4, 1.6, 1.1, 0.8, 0.5, 0.2, 0.0, 0.0)
+agelabels<-c("0-4","5-9","10-14","15-19","20-24","25-29","30-34",
+             "35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74",
+             "75-79","80-44","85-89", "90-94", "95-99", "100+")
+      par(mar=pyramid.plot(xy.2015,xx.2015,labels=agelabels, main = "2015 United States Population Pyramid",
+                           lxcol="lightblue",rxcol="pink",
+                           gap=0.5,show.values=TRUE))
+```
+
+Displaying Data Using Shiny
+========================================================
+
+- This application will use data from the UN World Population prospects to build population pyramids for the predicted population 25, 50, and 75 years in the future. 
+
+- Currently, the data is displayed for the United States only, but it would be easy to add other countries.
+
+
+Predicition the World Population by Age is Essential for Generational Accounting
+========================================================
+
+- This app will be particularly useful in predicting the population of children and the elderly.
+
+- Data like this is crucial because it helps both public and private organizations predict the necessary allocation of resources in the future. 
+
